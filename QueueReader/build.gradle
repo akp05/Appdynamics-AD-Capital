@@ -30,7 +30,7 @@ sourceSets {
 mainClassName = 'com.appdynamics.loan.queuereader.RabbitMQConfig';
 
 task uberjar(type: Jar, dependsOn: 'build') {
-    from files(sourceSets.main.output.classesDir)
+    from files(sourceSets.main.output.classesDirs)
     from('../Models/build/classes/main')
     from configurations.runtime.asFileTree.files.collect { zipTree(it) }
     exclude 'META-INF/*.DSA', 'META-INF/*.RSA', 'META-INF/*.SF'
